@@ -1,0 +1,27 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $brews := list
+     "bat"
+     "exa"
+     "neovim"
+     "starship" -}}
+
+if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; 
+then
+    echo "Homebrew already installed..."
+else
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo "Installing Homebrew packages..."
+/home/linuxbrew/.linuxbrew/bin/brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+EOF
+{{ end }}
+

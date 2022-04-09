@@ -1,0 +1,44 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+font_name="MonoLisa"
+font_filename="$font_name.zip"
+font_dir="$HOME/.local/share/fonts/"
+
+create_directory() {
+    dir=$1
+    if [ ! -d "$dir" ]; then
+        mkdir $dir
+    fi
+}
+
+is_font_installed() {
+    fontname=$1
+    fc-list | grep -i "$fontname" >/dev/null
+}
+
+if ! is_font_installed $font_name; then
+    echo "Installing $font_name font..."
+    echo "This step requires 1Password access. Make sure 1password-cli has an account installed or the gui app is open and configured for cli auth."
+    echo "Press any key to countinue."
+    
+    while [ true ] ; do
+        read -n 1
+        if [ $? = 0 ] ; then
+            break ;
+        fi
+    done
+
+    create_directory $font_dir
+    trap "rm -rf /tmp/$font_filename" EXIT
+    op document get $font_name --output /tmp/$font_filename
+    unzip /tmp/$font_filename -d $font_dir
+else
+    echo "$font_name font already installed..."
+fi
+
+echo "Reloading user font cache..."
+fc-cache -fv
+{{ end }}

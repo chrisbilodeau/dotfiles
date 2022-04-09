@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "linux" -}}
+Host *
+  IdentityAgent ~/.1password/agent.sock
+  Ciphers aes256-ctr,aes128-ctr,aes256-cbc,aes128-cbc,3des-cbc
+  KexAlgorithms diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+{{ else if eq .chezmoi.os "darwin" -}}
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  Ciphers aes256-ctr,aes128-ctr,aes256-cbc,aes128-cbc,3des-cbc
+  KexAlgorithms diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+{{ end }}
