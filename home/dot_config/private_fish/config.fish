@@ -6,6 +6,7 @@ if status is-interactive
 
     # Set enviornment variables
     set -gx EDITOR nvim
+    set -U fish_greeting "🐠 Unauthorized Access Prohibited 🐠"
     set -gx PYENV_ROOT $HOME/.pyenv
 
     # Set Paths

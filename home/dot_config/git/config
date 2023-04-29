@@ -1,0 +1,13 @@
+[user]
+  name = Chris Bilodeau
+  email = 7334990+chrisbilodeau@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH3KCNvqoC2K0y/gKKYl3EmblCEzxZ4gBSHblDn3+cZu
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
