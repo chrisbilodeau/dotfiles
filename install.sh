@@ -13,8 +13,7 @@ main () {
     echo "Using existing chezmoi install: ${chezmoi}"
   fi
   echo "Initailizing dotfiles..."
-  exec "${chezmoi}" init --apply chrisbilodeau
-  echo "#### Finished bootstrapping dotfiles ####"
+  exec "${chezmoi}" -v init --apply chrisbilodeau
 }
 
 install_chezmoi () {
