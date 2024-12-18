@@ -1,0 +1,46 @@
+theme = "catppuccin_latte"
+# theme = "catppuccin_frappe"
+
+[editor]
+auto-save = true
+bufferline = "multiple"
+line-number = "relative"
+cursorline = true
+text-width = 88
+# Colemak - https://github.com/helix-editor/helix/pull/8875#issuecomment-1822912941 
+jump-label-alphabet = "eirsaotndhfuywgm(cplbjvkx)z_"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "┆"
+skip-levels = 1
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+separator = " | "
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[keys.normal]
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-w" = ":buffer-close"
+"A-/" = "repeat_last_motion"
