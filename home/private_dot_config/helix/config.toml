@@ -9,6 +9,7 @@ cursorline = true
 text-width = 88
 # Colemak - https://github.com/helix-editor/helix/pull/8875#issuecomment-1822912941 
 jump-label-alphabet = "eirsaotndhfuywgm(cplbjvkx)z_"
+popup-border = "all"
 
 [editor.cursor-shape]
 insert = "bar"
