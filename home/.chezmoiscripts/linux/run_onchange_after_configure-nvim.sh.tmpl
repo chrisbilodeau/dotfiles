@@ -1,9 +1,0 @@
-{{ if (eq .chezmoi.os "linux") -}}
-#!/bin/bash
-
-set -eufo pipefail
-
-echo "Configuring Neovim..."
-/home/linuxbrew/.linuxbrew/bin/nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -u ~/.config/nvim/lua/user/plugins.lua
-
-{{ end }}

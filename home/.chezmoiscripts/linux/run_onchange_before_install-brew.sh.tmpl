@@ -4,10 +4,13 @@
 set -eufo pipefail
 
 {{ $brews := list
-     "bat"
-     "exa"
-     "neovim"
-     "starship" -}}
+    "bat"
+    "eza"
+    "fish"
+    "helix"
+    "starship"
+    "zellij"
+-}}
 
 if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; 
 then

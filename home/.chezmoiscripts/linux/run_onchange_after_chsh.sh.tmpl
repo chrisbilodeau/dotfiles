@@ -1,9 +1,0 @@
-{{ if eq .chezmoi.os "linux" -}}
-#!/bin/bash
-
-set -eufo pipefail
-
-echo "Changing login shell to Fish..."
-chsh -s /usr/bin/fish
-
-{{ end }}
