@@ -1,5 +1,4 @@
 if status is-interactive
-
     # Set enviornment variables
     set -gx EDITOR hx
     set -U fish_greeting "🐠 Unauthorized Access Prohibited 🐠"
@@ -11,8 +10,13 @@ if status is-interactive
     # Set Paths
     fish_add_path "$HOME"/.local/bin
     fish_add_path "$HOME"/.local/share/cargo/bin
+    {{- if eq .chezmoi.os "darwin" }}
     fish_add_path /opt/homebrew/bin
     fish_add_path /opt/homebrew/sbin
+    {{- else if eq .chezmoi.os "linux" }}
+    fish_add_path /home/linuxbrew/bin
+    fish_add_path /home/linuxbrew/sbin
+    {{ end }}
 
     # Abbreviations
     abbr -a -g gco git checkout
