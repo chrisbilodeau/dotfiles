@@ -1,0 +1,8 @@
+{{ if eq .chezmoi.os "darwin" -}}
+command = "/opt/homebrew/bin/fish -l"
+{{ else if eq .chezmoi.os "linux" -}}
+command = "/home/linuxbrew/.linuxbrew/bin/fish -l"
+{{ end -}}
+theme = catppuccin-latte
+font-family = "MonoLisa"
+font-family-italic = "MonoLisa Script"
