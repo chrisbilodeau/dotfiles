@@ -5,6 +5,7 @@ packages:
       - 'eza'
       - 'helix'
       - 'lazygit'
+      - 'zellij'
   darwin:
     brews:
     casks:
