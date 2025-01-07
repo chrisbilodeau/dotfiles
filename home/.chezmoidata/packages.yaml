@@ -1,0 +1,17 @@
+packages:
+  all:
+    brews:
+      - 'bat'
+      - 'eza'
+      - 'helix'
+      - 'lazygit'
+  darwin:
+    brews:
+    casks:
+      - '1password'
+  fedora:
+    brews:
+    dnf:
+  ubuntu:
+    brews:
+    apt:

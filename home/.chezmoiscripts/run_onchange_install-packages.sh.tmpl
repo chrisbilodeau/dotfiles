@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+echo "Installing brews for all"
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.all.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+
+{{- if eq .chezmoi.osRelease.id "fedora" }}
+echo "Installing Fedora packages"
+sudo dnf install -y {{- range .packages.linux.dnf }} {{ . }}{{ end }}
+{{- end }}

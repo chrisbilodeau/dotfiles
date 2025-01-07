@@ -14,8 +14,8 @@ if status is-interactive
     fish_add_path /opt/homebrew/bin
     fish_add_path /opt/homebrew/sbin
     {{- else if eq .chezmoi.os "linux" }}
-    fish_add_path /home/linuxbrew/bin
-    fish_add_path /home/linuxbrew/sbin
+    fish_add_path /home/linuxbrew/.linuxbrew/bin
+    fish_add_path /home/linuxbrew/.linuxbrew/sbin
     {{ end }}
 
     # Abbreviations

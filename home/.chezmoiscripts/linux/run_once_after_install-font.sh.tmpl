@@ -3,6 +3,7 @@
 
 set -eufo pipefail
 
+font_op_ref="Font - MonoLisa"
 font_name="MonoLisa"
 font_filename="$font_name.zip"
 font_dir="$HOME/.local/share/fonts/"
@@ -23,7 +24,7 @@ if ! is_font_installed $font_name; then
     echo "Installing $font_name font..."
     echo "This step requires 1Password access. Make sure 1password-cli has an account installed or the gui app is open and configured for cli auth."
     echo "Press any key to countinue."
-    
+
     while [ true ] ; do
         read -n 1
         if [ $? = 0 ] ; then
@@ -33,7 +34,7 @@ if ! is_font_installed $font_name; then
 
     create_directory $font_dir
     trap "rm -rf /tmp/$font_filename" EXIT
-    op document get $font_name --output /tmp/$font_filename
+    op document get "$font_op_ref" --output /tmp/$font_filename
     unzip /tmp/$font_filename -d $font_dir
 else
     echo "$font_name font already installed..."
