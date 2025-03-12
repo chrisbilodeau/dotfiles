@@ -8,8 +8,14 @@ packages:
       - 'zellij'
   darwin:
     brews:
+      - 'fish'
+      - 'git'
+      - 'starship'
     casks:
       - '1password'
+      - '1password-cli'
+      - 'alfred'
+      - 'ghostty'
   fedora:
     brews:
     dnf:
