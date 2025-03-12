@@ -3,7 +3,12 @@
 set -eufo pipefail
 
 echo "Installing brews for all"
-brew bundle --no-lock --file=/dev/stdin <<EOF
+{{- if eq .chezmoi.os "darwin" }}
+brew="/opt/homebrew/bin/brew"
+{{- else if eq .chezmoi.os "linux" }}
+brew="/home/linuxbrew/.linuxbrew/bin/brew"
+{{- end }}
+$brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.all.brews -}}
 brew {{ . | quote }}
 {{ end -}}
