@@ -10,6 +10,7 @@ text-width = 88
 # Colemak - https://github.com/helix-editor/helix/pull/8875#issuecomment-1822912941 
 jump-label-alphabet = "eirsaotndhfuywgm(cplbjvkx)z_"
 popup-border = "all"
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -23,6 +24,9 @@ hidden = false
 render = true
 character = "┆"
 skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [editor.lsp]
 display-inlay-hints = true
