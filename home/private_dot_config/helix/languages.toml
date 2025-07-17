@@ -2,8 +2,9 @@
 command = "pyright-langserver"
 args = ["--stdio"]
 
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [language-server.biome]
 command = "biome"
@@ -11,7 +12,7 @@ args = ["lsp-proxy"]
 
 [[language]]
 name = "python"
-language-servers = ["ruff-lsp", "pyright"]
+language-servers = ["ruff", "pyright"]
 formatter = { command = "ruff", args = ["format", "--quiet", "-"] }
 auto-format = true
 
