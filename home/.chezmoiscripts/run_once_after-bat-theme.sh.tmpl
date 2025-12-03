@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{- if eq .chezmoi.os "darwin" }}
+bat="/opt/homebrew/bin/bat"
+{{- else if eq .chezmoi.os "linux" }}
+bat="/home/linuxbrew/.linuxbrew/bin/bat"
+{{- end }}
+
+echo "Downloading Catppuccin themes for bat..."
+THEMES_DIR="$(bat --config-dir)/themes"
+mkdir -p $THEMES_DIR
+curl --silent --fail --show-error --output-dir $THEMES_DIR --output Catppuccin-Latte.tmTheme  --location "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Latte.tmTheme"
+curl --silent --fail --show-error --output-dir $THEMES_DIR --output Catppuccin-Latte.tmTheme  --location "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme"
+curl --silent --fail --show-error --output-dir $THEMES_DIR --output Catppuccin-Latte.tmTheme  --location "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Macchiato.tmTheme"
+curl --silent --fail --show-error --output-dir $THEMES_DIR --output Catppuccin-Latte.tmTheme  --location "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme"
+
+echo "Rebuilding bat cache..."
+bat cache --build
