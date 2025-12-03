@@ -3,6 +3,11 @@ command = "/opt/homebrew/bin/fish -l"
 {{ else if eq .chezmoi.os "linux" -}}
 command = "/home/linuxbrew/.linuxbrew/bin/fish -l"
 {{ end -}}
+cursor-click-to-move = true
+cursor-style = block
+cursor-style-blink = false
+cursor-text = cell-background
 theme = "Catppuccin Macchiato"
-font-family = "MonoLisa"
-font-family-italic = "MonoLisa Script"
+font-family = "MonoLisa Custom v1 Light"
+font-size = 16
+shell-integration-features = no-cursor
