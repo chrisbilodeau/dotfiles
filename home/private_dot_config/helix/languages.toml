@@ -2,9 +2,9 @@
 command = "codebook-lsp"
 args = ["serve"]
 
-[language-server.pyright]
-command = "pyright-langserver"
-args = ["--stdio"]
+[language-server.ty]
+command = "ty"
+args = ["server"]
 
 [language-server.ruff]
 command = "ruff"
@@ -16,7 +16,7 @@ args = ["lsp-proxy"]
 
 [[language]]
 name = "python"
-language-servers = ["ruff", "pyright", "codebook"]
+language-servers = ["ty", "ruff", "codebook"]
 formatter = { command = "ruff", args = ["format", "--quiet", "-"] }
 auto-format = true
 
