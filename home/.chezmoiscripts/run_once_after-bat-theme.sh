@@ -2,6 +2,9 @@
 
 set -eufo pipefail
 
+echo "Bat theme install not curretly supported..."
+exit 0
+
 echo "Downloading bat Catppuccin Latte theme..."
 THEMES_DIR="$(bat --config-dir)/themes"
 mkdir -p $THEMES_DIR
