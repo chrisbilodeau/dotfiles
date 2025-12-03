@@ -1,7 +1,7 @@
 [user]
   name = Chris Bilodeau
   email = 7334990+chrisbilodeau@users.noreply.github.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH3KCNvqoC2K0y/gKKYl3EmblCEzxZ4gBSHblDn3+cZu
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNVTE6XBwOu9fs5sWHhHnF2bdbIVCJQkPeC63urg3Rj
 
 [gpg]
   format = ssh
