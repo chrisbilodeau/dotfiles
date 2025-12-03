@@ -2,9 +2,12 @@ packages:
   all:
     brews:
       - 'bat'
+      - 'codebook-lsp'
       - 'eza'
       - 'helix'
       - 'lazygit'
+      - 'ruff'
+      - 'uv'
       - 'zellij'
   darwin:
     brews:
