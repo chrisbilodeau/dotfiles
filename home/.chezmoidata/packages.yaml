@@ -19,6 +19,7 @@ packages:
       - '1password-cli'
       - 'alfred'
       - 'ghostty'
+      - 'scroll-reverser'
   fedora:
     brews:
     dnf:
